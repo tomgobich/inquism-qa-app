@@ -1,2 +1,8 @@
 @import 'bootstrap';
 @import './bootswatch';
+
+.navbar,
+.btn,
+.dropdown-menu {
+  border-radius: 0;
+}

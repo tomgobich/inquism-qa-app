@@ -23,18 +23,20 @@
               {{session.currentUser.displayName}} <span class="caret"></span>
             </a>
             <ul class="dropdown-menu" role="menu">
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
+              <li><a href="">Action</a></li>
+              <li><a href="">Another action</a></li>
+              <li><a href="">Something else here</a></li>
               <li class="divider"></li>
-              <li><a href="#">Separated link</a></li>
+              <li><a href="">Separated link</a></li>
               <li class="divider"></li>
-              <li><a href="#">One more separated link</a></li>
+              <li><a href="" {{action 'signOut'}}>Logout</a></li>
             </ul>
           </li>
         {{else}}
-          <li><a href="#"><button class="btn btn-primary">Sign Up</button></a></li>
-          <li><a href="#"><button class="btn btn-default">Log In</button></a></li>
+          <div class="navbar-form">
+            {{#link-to 'auth.signup'}}<a href=""><button class="btn btn-primary">Sign Up</button></a>{{/link-to}}
+            {{#link-to 'auth.login'}}<a href=""><button class="btn btn-default">Log In</button></a>{{/link-to}}
+          </div>
         {{/if}}
       </ul>
     </div>
