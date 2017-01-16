@@ -15,13 +15,18 @@ export default Ember.Route.extend({
 
   actions: {
     postQuestion() {
-      let question = this.controller.get('question');
-      let tags = this.controller.get('tags');
+      let question    = this.controller.get('question'),
+          tags        = this.controller.get('tags'),
+          uid         = this.controller.get('session.uid'),
+          newQuestion = null,
+          user        = null,
+          tagModels   = [];
 
-      let newQuestion = this.store.createRecord('question', {question, tags});
-      let uid = this.controller.get('session.uid');
+      tags = this._formatTags(tags);
 
-      let user = getOrCreateUser(uid,
+      newQuestion = this.store.createRecord('question', {question, tags});
+
+      user = getOrCreateUser(uid,
         this.get('session.currentUser.displayName'),
         this.get('session.currentUser.email'),
         this.get('session.currentUser.photoURL'),
@@ -47,6 +52,10 @@ export default Ember.Route.extend({
                                   });
       });
     }
+  },
+
+  _formatTags(tags) {
+    return tags.split(' ');
   }
 
 });

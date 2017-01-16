@@ -6,7 +6,7 @@
       <div class="well">
         <h4>{{question.question}}</h4>
         <p>
-          Tags: {{question.tags}}
+          Tags: {{#each question.tags as |tag|}}<span class="label label-default">{{tag}}</span>{{/each}}
         </p>
       </div>
     {{/each}}
