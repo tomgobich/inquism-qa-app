@@ -11,6 +11,10 @@ Router.map(function() {
     this.route('signup');
     this.route('login');
   });
+
+  this.route('post', function() {
+    this.route('question');
+  });
 });
 
 export default Router;
