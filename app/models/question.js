@@ -4,5 +4,6 @@ export default DS.Model.extend({
   question: DS.attr('string'),
   tags: DS.attr(),
   postDate: DS.attr('date'),
-  user: DS.belongsTo('user')
+  user: DS.belongsTo('user'),
+  answers: DS.hasMany('answer')
 });

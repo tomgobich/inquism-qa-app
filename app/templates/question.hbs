@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="col-md-8">
+    <div class="well">
+      <h4>{{model.question}}</h4>
+      <p>
+        Tags: {{#each model.tags as |tag|}}<span class="label label-default">{{tag}}</span>{{/each}}
+      </p>
+      <div class="user">
+        <img src="{{model.user.avatar}}" class="img-responsive">
+        Posted by {{question.user.username}} {{moment-from-now question.postDate interval=1000}}
+      </div>
+    </div>
+  </div>
+</div>

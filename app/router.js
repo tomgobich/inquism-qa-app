@@ -13,8 +13,10 @@ Router.map(function() {
   });
 
   this.route('post', function() {
-    this.route('question');
+    this.route('question', function() {});
   });
+
+  this.route('question', {path: '/question/:questionID'});
 });
 
 export default Router;
