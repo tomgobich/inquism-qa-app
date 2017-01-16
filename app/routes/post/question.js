@@ -18,13 +18,15 @@ export default Ember.Route.extend({
       let question    = this.controller.get('question'),
           tags        = this.controller.get('tags'),
           uid         = this.controller.get('session.uid'),
+          postDate    = new Date(),
           newQuestion = null,
           user        = null,
           tagModels   = [];
 
       tags = this._formatTags(tags);
 
-      newQuestion = this.store.createRecord('question', {question, tags});
+
+      newQuestion = this.store.createRecord('question', {question, tags, postDate});
 
       user = getOrCreateUser(uid,
         this.get('session.currentUser.displayName'),

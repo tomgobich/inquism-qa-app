@@ -8,6 +8,10 @@
         <p>
           Tags: {{#each question.tags as |tag|}}<span class="label label-default">{{tag}}</span>{{/each}}
         </p>
+        <div class="user">
+          <img src="{{question.user.avatar}}" class="img-responsive">
+          Posted by {{question.user.username}} on {{question.postDate}}
+        </div>
       </div>
     {{/each}}
   </div>
